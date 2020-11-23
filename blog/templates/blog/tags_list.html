@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for tag in tags %}
+    <h2 class="mt-5">Tags:</h2>
+        <h3 class="mt-5"><a href="{% url 'tag_detail_url' slug=tag.slug %}">{{ tag.title }}</a></h3>
+    {% endfor %}
+
+{% endblock %}

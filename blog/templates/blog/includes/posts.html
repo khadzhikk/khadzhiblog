@@ -1,0 +1,12 @@
+<div class="card mb-4" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"> {{ post.title }} </h5>
+            <p class="card-text"> {{ post.body|truncatewords:15 }} </p>
+            <a href="{% url 'post_detail_url' slug=post.slug %}" class="btn btn-primary">This post</a>
+          </div>
+          <div class="card-footer text-muted">
+              {% for tag in post.tags.all %}
+                <a href="{% url 'tag_detail_url' slug=tag.slug %}"> {{ tag.title }} </a>
+              {% endfor %}
+          </div>
+</div>

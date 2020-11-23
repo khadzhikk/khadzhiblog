@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3 class="mb-5 mt-5">Posts by tag:<b>{{ tag.title }}</b></h3>
+
+    {% for post in tag.posts.all %}
+        {% include 'blog/includes/posts.html' %}
+    {% endfor %}
+
+{% endblock %}

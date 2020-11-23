@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+
+    <form action="{% url 'tag_create_url' %}" method="post">
+
+        {% for field in form %}
+            <div class="form-group">
+
+                {% if filed.errors %}
+                    <div class="alert alert-danger">
+                        {{ field.errors }}
+                    </div>
+                {% endif %}
+
+                {{ field.label }}
+                {{ field }}
+            </div>
+        {% endfor %}
+
+
+        <button class="btn btn-primar">create tag</button>
+    </form>
+
+{% endblock %}
